@@ -1,0 +1,46 @@
+<html>
+<head>
+
+	{% load static %}
+
+<link rel="stylesheet" href="{% static './css/navbar.css' %}">
+
+</head>
+
+
+<body>
+<div class="top_toolbar">
+	<strong style="font-size:30px">VMZ Hoard</strong>
+	</br>
+	<div style="display:flex;justify-content:right">
+		<div class="dropdown">
+			<img src="{%static './img/account.png' %}" class="icon" alt="Account Icon">
+			<a>Account</a>
+			<div class='dropdown-content'>
+				<span>
+				<a href="#">Login</a></br>
+				</span>
+				<span>
+				<a href="../signup">Signup</a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div style="display:table;width:100%;min-height: 100vh;">
+	<div class="sidebar">
+		<div style="display: flex; flex-direction: column;">
+			<div>home</div>
+			<div>random</div>
+		</div>
+	</div>
+	<div class="textbox">
+		<div>一得阁拉米</div>
+	</div>
+</div>
+
+</body>
+
+</html>

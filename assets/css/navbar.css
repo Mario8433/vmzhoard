@@ -1,0 +1,48 @@
+body {
+    background-image: url('/assets/img/background.jpg')
+}
+
+.top_toolbar a:hover {
+    color:white;
+    background-color:darkred;
+    text-decoration:none;
+    cursor:pointer}
+    
+    .dropdown img{
+    vertical-align:middle;}
+    
+    .dropdown .dropdown-content a{
+    padding:5px}
+    
+    
+    .dropdown {
+    display:inline;
+    overflow:hidden;
+    vertical-align:top;
+    width:200px}
+    
+    .dropdown-content a {
+    padding:5px;
+    margin:5px;
+    display: block;}
+    
+    .dropdown .dropdown-content {
+    display:none;
+    position:absolute;
+    background-color:white;
+    width:inherit;
+    z-index:1;}
+    
+    .dropdown:hover .dropdown-content {
+    display:block;}
+    
+    .dropdown span {
+    display:flex;
+    align-items:center;
+    }
+    
+    .dropdown span:hover {
+    background-color:darkred;}
+    
+    .dropdown span:hover a{
+    color:white;}
