@@ -71,3 +71,14 @@ body {
     
     .dropdown span:hover a{
     color:white;}
+
+#brand {
+    font-size:30px;
+    text-decoration: none;
+    background-color: black;
+}
+
+#brand:hover {
+    color:black;
+    background-color: default;
+}

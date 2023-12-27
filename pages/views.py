@@ -1,7 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 
 from text.models import Text
 from .forms import CreateTextForm, SignUpForm
@@ -12,7 +13,7 @@ from .forms import CreateTextForm, SignUpForm
 
 # HomePage
 def composeHome(request):
-    return render(request, 'navbar.html')
+    return render(request, 'home.html')
 
 def composeText(request):
     idnum = request.GET.get('id')
@@ -59,7 +60,14 @@ def composeSignUp(request):
             if last_name:
                 user.last_name = last_name
             user.save()
-            return render(request, 'signup.html',{'form':form})
+            return redirect('/home')
     else:
         form = SignUpForm()
     return render(request, 'signup.html',{'form':form})
+
+def LogoutRedirect(request):
+    logout(request)
+    return redirect('/home')
+
+def composeProfile(request):
+    return render(request,'profile.html')

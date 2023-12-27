@@ -9,3 +9,7 @@ class SignUpForm(forms.Form):
     email = forms.CharField(label="Email")
     first_name = forms.CharField(label="First Name",required=False)
     last_name = forms.CharField(label="Last Name",required=False)
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label="Username")
+    password = forms.CharField(label="Password")
