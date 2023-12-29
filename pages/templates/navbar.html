@@ -41,14 +41,30 @@
 			{% endif %}
 			
 			</div>
-		</div>
+			</div>
 	</div>
+	
 
 </div>
 
-{% block main %}
-You are not supposed to see this text. Please contact the administrator.
-{% endblock %}
+<div style="display:table;width:100%;min-height: 100vh;">
+	<div class="sidebar">
+		<div style="display: flex; flex-direction: column;">
+			<ul>
+				<li><a href="{% url 'home' %}">home</a></li>
+				<li><a href="{% url 'edit' %}">create pages</a></li>
+				<li><a href="{% url 'index' %}">all pages</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="textbox">
+		<div>
+			{% block main %}
+			You are not supposed to see this text. Please contact the administrator.
+			{% endblock %}
+		</div>
+	</div>
+</div>
 
 </body>
 

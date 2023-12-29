@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+
+{% block main%}
+
+<h1>Items List</h1>
+
+<ul>
+    {% for item in items %}
+        {% if item.title %}
+        <li><a href="/pages/?id={{item.pk}}">{{ item.title }}</a></li>
+        {% else %}
+        <li><a href="/pages/?id={{item.pk}}">(Untitled)</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}

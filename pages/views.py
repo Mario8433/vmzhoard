@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import logout
 
 from text.models import Text
-from .forms import CreateTextForm, SignUpForm
+from .forms import *
 
-
+import re
 
 
 
@@ -18,26 +18,29 @@ def composeHome(request):
 def composeText(request):
     idnum = request.GET.get('id')
     obj = Text.objects.get(pk = idnum)
-    text = obj.text
-    time = obj.date
-    return render(request,'entry.html',{'text':text,'time':time})
+    return render(request,'entry.html',{'entry':obj})
 
 
-
-
+def composeIndex(request):
+    items = Text.objects.all()
+    return render(request, 'index.html',{'items':items})
 
 
 # Create an article
-def composeCreate(request):
+def composeEdit(request):
+    idnum = request.GET.get('id')
+    obj = Text.objects.get(pk = idnum)
     if request.method == 'POST':
-        form = CreateTextForm(request.POST)
+        form = EditTextForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data['originalText']
+            text = re.sub(r'\n+','</p><p>',text)
+            text = '<p>' + text + '</p>'
             Text.objects.create(text = text)
-            return render(request, 'create.html',{'form':form})
+            return render(request, 'edit.html',{'form':form})
     else:
-        form = CreateTextForm()
-    return render(request, 'create.html',{'form':form})
+        form = EditTextForm()
+    return render(request, 'edit.html',{'form':form})
 
 
 

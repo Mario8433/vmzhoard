@@ -1,3 +1,19 @@
-{{ time }}
+{% extends 'navbar.html' %}
 
-{{ text }}
+{% block main %}
+
+<h1>
+    {% if entry.title %}
+    {{ entry.title }}
+    {% else %}
+    Untitled
+    {% endif %}
+</h1>
+<div>[<a href="">EDIT</a>]</div>
+<div>[<a href="">DELETE</a>]</div>
+<p>{{ entry.date }}</p>
+<p>Source: {{ entry.link }}</p>
+<p>{{ entry.text|safe }}</p>
+</p>
+
+{% endblock %}

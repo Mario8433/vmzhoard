@@ -1,7 +1,7 @@
 from django import forms
 
-class CreateTextForm(forms.Form):
-    originalText = forms.CharField(label="Text")
+class EditTextForm(forms.Form):
+    originalText = forms.CharField(label="Text",widget=forms.Textarea)
 
 class SignUpForm(forms.Form):
     username = forms.CharField(label="Username")
