@@ -6,8 +6,12 @@ At this point, the website cannot yet be viewed online. If you would like to pre
 
 Currently, the website supports the following functions:
 
-- Create pages and manage with an indexing system
+- Create pages (currently unusable) and manage with an indexing system
 - Create user, login, logout
+
+Functions under maintenance:
+
+- Create pages
 
 More functions comming in the future...
 
