@@ -4,7 +4,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 
-from text.models import Text
+from ..text.models import Text
 from .forms import *
 
 import re
